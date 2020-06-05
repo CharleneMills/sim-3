@@ -18,16 +18,14 @@ export function setUser(payload) {
 
 export function login(user) {
   console.log(user)
-  const payload = axios
-    .post("/auth/login", user)
+  const payload = axios.post("/auth/login", user)
     .then((results) => results.data)
     .catch((err) => console.log(err))
   return { type: LOGIN, payload }
 }
 
 export function register(user) {
-  const payload = axios
-    .post("/auth/register", user)
+  const payload = axios.post("/auth/register", user)
     .then((results) => results.data)
     .catch((err) => console.log(err))
   return { type: REGISTER, payload: user }
@@ -39,8 +37,7 @@ export function logout() {
 }
 
 export function getUser() {
-  const payload = axios
-    .get("/auth/user")
+  const payload = axios.get("/auth/user")
     .then((results) => results)
     .catch((err) => console.log(err))
   return { type: GET_USER, payload }

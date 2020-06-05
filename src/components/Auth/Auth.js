@@ -28,17 +28,8 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <input
-          name="username"
-          value={this.state.username}
-          onChange={(e) => this.handleChange(e.target)}
-        />
-        <input
-          name="password"
-          type="password"
-          value={this.state.password}
-          onChange={(e) => this.handleChange(e.target)}
-        />
+        <input name="username" value={this.state.username} onChange={(e) => this.handleChange(e.target)}/>
+        <input name="password" type="password" value={this.state.password} onChange={(e) => this.handleChange(e.target)}/>
         <button onClick={this.login}>Login</button>
         <button onClick={this.register}>Register</button>
       </div>
