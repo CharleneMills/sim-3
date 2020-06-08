@@ -10,8 +10,8 @@
 }
 
 .auth-box{
-    width: 500px;
-    height: 300px;
+    width: 600px;
+    height: 500px;
     box-shadow: 3px 5px 10px black;
     padding: 40px;
     border-radius: 10px;
@@ -19,8 +19,12 @@
     color: black;
 }
 
+.auth-box img{
+    padding: 20px;
+}
+
 .auth-box h1{
-    font-size: 72px;
+    font-size: 100px;
     font-family: arial !important;
     font-weight: bold;
 }

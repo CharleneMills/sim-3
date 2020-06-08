@@ -4,6 +4,7 @@ import axios from 'axios';
 import { connect } from "react-redux"
 import { login } from "../../ducks/reducer"
 import "./Auth.css"
+import HeloLogo from "../../assets/helo_logo_black.png"
 
 class Auth extends Component {
   constructor(props) {
@@ -51,6 +52,7 @@ class Auth extends Component {
     return (
      <div className="auth-container">
       <div className="auth-box">
+        <img src={HeloLogo}/>
         <h1>HELO</h1>
           <input placeholder="username" name="username" value={this.state.username} onChange={(e) => this.handleChange(e.target)}/><br/>
           <input placeholder="password" name="password" type="password" value={this.state.password} onChange={(e) => this.handleChange(e.target)}/><br/>
