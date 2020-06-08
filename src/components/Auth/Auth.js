@@ -53,7 +53,7 @@ class Auth extends Component {
      <div className="auth-container">
       <div className="auth-box">
         <img src={HeloLogo}/>
-        <h1>HELO</h1>
+        <h1>Helo</h1>
           <input placeholder="username" name="username" value={this.state.username} onChange={(e) => this.handleChange(e.target)}/><br/>
           <input placeholder="password" name="password" type="password" value={this.state.password} onChange={(e) => this.handleChange(e.target)}/><br/>
           <button onClick={this.login}>Login</button>
