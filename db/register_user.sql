@@ -1,5 +1,5 @@
 INSERT INTO helo_users
-    (username, hash)
+    (username, password)
 VALUES
     ($1, $2)
-RETURNING id, username;
+RETURNING username, id;

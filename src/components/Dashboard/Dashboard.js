@@ -1,8 +1,9 @@
 import React, { Component } from "react"
 import axios from "axios"
 import { connect } from "react-redux"
-import { setPosts } from "../../ducks/reducer"
+//import { setPosts } from "../../ducks/reducer"
 import Nav from "../Nav/Nav"
+import "./Dashboard.css";
 
 
 class Dashboard extends Component {
@@ -30,7 +31,7 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div>
+      <div className="dashboard-container">
           <Nav />
         This is the Dashboard
             
@@ -43,4 +44,4 @@ const mapStateToProps = (state) => {
   return { posts: state.reducer.posts }
 }
 
-export default connect(mapStateToProps, { setPosts })(Dashboard)
+export default connect(mapStateToProps, {  })(Dashboard)

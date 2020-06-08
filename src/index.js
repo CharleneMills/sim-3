@@ -6,6 +6,7 @@ import * as serviceWorker from "./serviceWorker"
 import { Provider } from "react-redux"
 import store from "../src/ducks/store"
 import { HashRouter as Router } from "react-router-dom"
+import "bootstrap/dist/css/bootstrap.css"
 
 ReactDOM.render(
   <React.StrictMode>
