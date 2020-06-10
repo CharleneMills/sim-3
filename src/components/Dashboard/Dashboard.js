@@ -64,7 +64,7 @@ handleChange = (e) =>{
            <div key={thisPost.id} className="post-card" onClick={() => this.props.history.push('/post')}>
 
              <h2>{thisPost.title}</h2>
-             <p><span>by {thisPost.username} </span><img src={thisPost.profile_pic} alt={`Profile picture for ${thisPost.username}`}/></p>
+             <p><span>by {thisPost.username} </span><img className="profile-pic" src={thisPost.profile_pic} alt={`Profile picture for ${thisPost.username}`}/></p>
 
            </div>
            
