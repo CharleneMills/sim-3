@@ -9,7 +9,11 @@ const initialState = {
 const LOGIN_USER = "LOGIN_USER"
 const LOGOUT_USER = "LOGOUT_USER"
 const GET_USER = "GET_USER"
+const SET_POSTS = "SET_POSTS"
 
+export function setPosts(payload) {
+  return { type: SET_POSTS, payload }
+}
 
 export function login(user) {
   console.log(user)
@@ -35,8 +39,8 @@ export function getUser() {
 
 
 export default function reducer(state = initialState, action) {
-
-  switch (action.type) {
+  const {type, payload} = action
+  switch (type) {
     case LOGIN_USER:
       return { ...state, user:action.payload, isLoggedIn: true }
     case LOGOUT_USER:
@@ -44,7 +48,9 @@ export default function reducer(state = initialState, action) {
     case GET_USER + 'PENDING':
         return this
     case GET_USER + 'FULFILLED':
-      return { ...state, user: action.payload.data, isLoggedIn: true} 
+      return { ...state, user: action.payload.data, isLoggedIn: true}
+    case SET_POSTS:
+      return { ...state, posts: payload }   
     default:
       return state
   }

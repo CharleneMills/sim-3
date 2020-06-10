@@ -1,5 +1,5 @@
 INSERT INTO helo_users
-    (username, password)
+    (username, password, profile_pic)
 VALUES
-    ($1, $2)
-RETURNING username, id;
+    ($1, $2, $3)
+RETURNING username, id, profile_pic;

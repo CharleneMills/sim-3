@@ -1,0 +1,49 @@
+.dashboard-container{
+    background-color: #f2f2f2;
+    display: flex;
+}
+
+.right-container{
+    padding: 100px 160px;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+.post-container{
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.2);
+    border-radius: 7px;
+    margin: 20px;
+}
+
+.post-card{
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.2);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 2px;
+}
+
+.post-card p, .post-card h2 {
+    margin-bottom: 0px;
+}
+
+.search-field{
+    width: 50%;
+}
+
+.search-reset{
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: grey;
+    color: white;
+    border: 0px;
+}
+
+.search-check{
+    background-color: blue;
+    color: white;
+}
