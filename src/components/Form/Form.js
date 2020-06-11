@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import axios from 'axios'
-import Nav from "../Nav/Nav"
 import {connect} from 'react-redux'
 
 
@@ -10,15 +9,25 @@ class Form extends Component {
       this.state = {
         title: '',
         img: '',
-        content: ''
+        content: '',
+        user_id: this.props.reducer.user.id
       }
     }
   
-  componentDidMount() {
-   
-  }
+newPost = () => {
+      axios.post('/api/post/', this.state).then(res => {
+        this.props.history.push('/dashboard');
+      }).catch(error => {
+        console.log(error)
+      })
+}
 
-//handle function with input fileds
+  handleChange = (e) =>{
+    const {name, value} = e.target;
+    this.setState({
+      [name]: value
+    }) 
+  }
 
 //button that calls an axios call - method 
 
@@ -31,22 +40,20 @@ render() {
 
     return (
     <div className="dashboard-container">
-        <Nav />
+       
             <div className="right-container">
         
                  <div className="post-container">
-                        <input placeholder="Title"/>
+                        <input name="title" value={this.state.title} placeholder="Title" onChange={ (e) => this.handleChange(e)}/>
                         <p>Image preview here</p>
-                        <input placeholder="Image URL"/><br/>
-                        <input type="text"/> 
+                        <input name="img" value={this.state.img} placeholder="Image URL" onChange={ (e) => this.handleChange(e)}/><br/>
+                        <input name="content" value={this.state.content} type="text" placeholder="content" onChange={ (e) => this.handleChange(e)}/> 
+                        <button onClick={() => this.newPost()}>Submit</button>
                  </div>
             </div>         
     </div>
     )
   }
-
-
-
 
 }
 

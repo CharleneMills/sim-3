@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import axios from 'axios'
-import Nav from "../Nav/Nav"
 import './Post.css';
 
 class Post extends Component {
@@ -29,7 +28,7 @@ render() {
 
     return (
     <div className="dashboard-container">
-        <Nav />
+        
             <div className="right-container">
         
                  <div className="post-container">

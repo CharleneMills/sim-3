@@ -71,6 +71,14 @@ module.exports = {
     db.get_post(id)
     .then((results) => res.status(200).send(results[0]))
     .catch((err) => res.status(500).send(err))
+  },
+  newPost: (req, res) => {
+    const db = req.app.get('db')
+    const {title, img, content, user_id} = req.body
+
+    db.new_post(title, img, content, user_id)
+        .then(post => res.status(200).send(post))
+        .catch(err => res.status(500).send(err));
   }
 
 }

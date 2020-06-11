@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import axios from 'axios'
-import Nav from "../Nav/Nav"
 import "./Dashboard.css";
 import Post from "../Post/Post";
 import { connect } from "react-redux"
@@ -73,7 +72,7 @@ handleChange = (e) =>{
 
     return (
       <div className="dashboard-container">
-          <Nav />
+      
         <div className="right-container">
           
           <div className="post-container">
