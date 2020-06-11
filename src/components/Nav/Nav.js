@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import "./Nav.css";
-import { getUser } from "../../ducks/reducer"
 import { connect } from "react-redux"
 
 
@@ -9,13 +8,14 @@ import { connect } from "react-redux"
 
 function Nav(props) {
 
-  console.log(props.data)
+  console.log(props)
 
   return (
     <div className="Nav sidebar">
-      <img className="profile-pic" src={props.profile_pic}/>
-      <p>{props.username}</p>
+      <img className="profile-pic" src={props.reducer.user.profile_pic}/>
+      <p>{props.reducer.user.username}</p>
       <Link to="/dashboard">Dashboard</Link><br/>
+      <Link to="/form">New Post</Link><br/>
       <Link to="/">Logout</Link>
     </div>
   );
@@ -23,4 +23,4 @@ function Nav(props) {
 
 const mapStateToProps = reduxState => reduxState
 
-export default connect(mapStateToProps, {getUser})(Nav)
+export default connect(mapStateToProps)(Nav)

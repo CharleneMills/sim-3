@@ -22,8 +22,9 @@ class Auth extends Component {
     const {username, password} = this.state;
     axios.post("/auth/login", {username, password})
       .then(res => {
-        this.props.history.push('/dashboard')
+        console.log(res.data)
         this.props.login(res.data)
+        this.props.history.push('/dashboard')
       }
     )
     .catch((err) => {

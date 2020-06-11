@@ -59,15 +59,13 @@ handleChange = (e) =>{
     const posts = this.state.posts.map(thisPost => {
       console.log({thisPost})
       return (
-     
            
-           <div key={thisPost.id} className="post-card" onClick={() => this.props.history.push('/post')}>
+           <div key={thisPost.id} className="post-card" onClick={() => this.props.history.push(`/post/${thisPost.id}`)}>
 
              <h2>{thisPost.title}</h2>
              <p><span>by {thisPost.username} </span><img className="profile-pic" src={thisPost.profile_pic} alt={`Profile picture for ${thisPost.username}`}/></p>
 
-           </div>
-           
+           </div>   
       
       )
     }) 
@@ -79,10 +77,10 @@ handleChange = (e) =>{
         <div className="right-container">
           
           <div className="post-container">
-            <input className="search-field" placeholder="Search Posts" name="filter" value={this.state.filter} onChange= { (e) => this.handleChange(e)}/> 
+            <input className="search-field" placeholder="Search Posts" name="filter" value={this.state.filter} onChange={ (e) => this.handleChange(e)}/> 
             <button onClick={this.getSearch}>Icon</button> 
             <button className="search-reset">Reset</button> 
-            My Posts <input className="search-check" type="checkbox"/>
+            Include My Posts <input className="search-check" type="checkbox"/>
           </div>
 
           <div className="post-container">

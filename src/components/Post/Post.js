@@ -1,35 +1,30 @@
 import React, { Component } from "react"
 import axios from 'axios'
 import Nav from "../Nav/Nav"
+import './Post.css';
 
 class Post extends Component {
     constructor(props) {
       super(props)
       this.state = {
-          title: '',
-          img:'',
-          content: '',
-          author: '',
-          profilePic: ''
+          post: {}
       }
     }
   
   componentDidMount() {
     axios
-    .get('/api/posts/:id')
+    .get(`/api/post/${this.props.match.params.id}`)
     .then((results) => {
-      this.props.setPosts(results.data)
       this.setState({
-        posts: results.data
+        post: results.data
       })
-      console.log(results.data)
     })
     .catch((err) => console.log(err))
   }
 
 render() {
-
-    const {title, profilePic, img, content, author} = this.state;
+  console.log(this.state.post)
+    const {title, profile_pic, img, content, username} = this.state.post;
 
 
     return (
@@ -40,11 +35,11 @@ render() {
                  <div className="post-container">
                     <div className="flex-row space-between">
                         <h2>{title}</h2>
-                        <p><span>by {author} </span><img className="profile-pic" src={profilePic} alt={`Profile picture for ${author}`}/></p>
+                        <p><span>by {username} </span><img className="profile-pic" src={profile_pic} alt={`Profile picture for ${username}`}/></p>
                     </div>
                     <div className="row">
                         <div className="col-md-6">
-                            <img className="img" src={img} alt={'post image'}/>
+                            <img className="post-image" src={img} alt={'post image'}/>
                         </div>  
                         <div className="col-md-2">
                             <p>{content}</p>

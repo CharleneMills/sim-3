@@ -2,7 +2,8 @@ import axios from 'axios'
 
 const initialState = {
   user: {},
-  isLoggedIn: false
+  isLoggedIn: false,
+  userId: null
 }
 
 
@@ -33,8 +34,12 @@ export function getUser() {
   return { type: GET_USER, payload: payload }
 }
 
-
- 
+// export function setUser(userId){
+//   return {
+//     type: SET_USER,
+//     payload: 
+//   }
+// }
   
 
 

@@ -27,11 +27,8 @@ module.exports = {
     } else {
         const authenticated = bcrypt.compareSync(password, user[0].password)
         if (authenticated) {
-            req.session.user = {
-                userId: user[0].user_id,
-                username: user[0].username
-            }
-            delete user[0].hash
+           delete user[0].password
+            req.session.user = user[0]
             res.status(200).send(req.session.user)
         } else {
             res.status(403).send('Username or password incorrect')
@@ -43,6 +40,7 @@ module.exports = {
     res.sendStatus(200)
   },
   getUser: (req, res) => {
+    console.log(req.session.user)
     if (!req.session.user) {
       return res.status(401).send("User not found.")
     }
@@ -65,5 +63,14 @@ module.exports = {
         .then((results) => res.status(200).send(results))
         .catch((err) => res.status(500).send(err))
     }
+  },
+  getPost: (req, res) => {
+    const db = req.app.get("db")
+    const {id} = req.params
+
+    db.get_post(id)
+    .then((results) => res.status(200).send(results[0]))
+    .catch((err) => res.status(500).send(err))
   }
+
 }
