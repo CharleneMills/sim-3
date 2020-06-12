@@ -43,10 +43,11 @@ render() {
             <div className="right-container">
         
                  <div className="post-container">
+                   <h2 className="title">New Post</h2>
                         <input className="form-input" name="title" value={this.state.title} placeholder="Title" onChange={ (e) => this.handleChange(e)}/>
                         <p>Image preview here</p>
                         <input className="form-input" name="img" value={this.state.img} placeholder="Image URL" onChange={ (e) => this.handleChange(e)}/><br/>
-                        <input className="form-input comment-box" name="content" value={this.state.content} type="text" placeholder="content" onChange={ (e) => this.handleChange(e)}/> 
+                        <textarea rows="4" className="form-input comment-box" name="content" value={this.state.content} type="text" placeholder="content" onChange={ (e) => this.handleChange(e)}/> 
                         <br/>
                         <button onClick={() => this.newPost()}>Submit</button>
                  </div>

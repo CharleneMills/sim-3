@@ -25,6 +25,7 @@
     padding: 20px;
     margin: 20px;
     border-radius: 2px;
+    align-items: center;
 }
 
 .post-card p, .post-card h2 {

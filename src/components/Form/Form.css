@@ -3,6 +3,12 @@ input.form-input {
     margin: 20px;
 }
 
-.comment-box{
-    height: 300px; 
+textarea.comment-box{
+    width: 80%;
+}
+
+h2.title{
+    text-align: left;
+    color: Orange;
+    font-weight: bold;
 }

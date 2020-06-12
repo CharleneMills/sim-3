@@ -11,12 +11,24 @@ body{
   padding: 0px !important;
 }
 
-.profile-pic{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
-    box-shadow: 0 0 10px rgba(0,0,0,.4);
-    margin: 0 5px;
-    background-color: white;
+.profile-pic {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,.4);
+  margin: 0 5px;
+  background-color: white;
+}
+
+button{
+  padding: 10px 20px;
+  background-color: #302d2d;
+  border: 0px !important;
+  color: white;
+  cursor: pointer;
+  margin: 5px !important;
+}
+
+button:hover{
+  background-color: #453d2d;
 }
