@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import axios from 'axios'
 import {connect} from 'react-redux'
+import './Form.css'
 
 
 class Form extends Component {
@@ -29,9 +30,7 @@ newPost = () => {
     }) 
   }
 
-//button that calls an axios call - method 
 
-//method needs to be an axios post that passes state + user id.
 
 render() {
 
@@ -44,10 +43,11 @@ render() {
             <div className="right-container">
         
                  <div className="post-container">
-                        <input name="title" value={this.state.title} placeholder="Title" onChange={ (e) => this.handleChange(e)}/>
+                        <input className="form-input" name="title" value={this.state.title} placeholder="Title" onChange={ (e) => this.handleChange(e)}/>
                         <p>Image preview here</p>
-                        <input name="img" value={this.state.img} placeholder="Image URL" onChange={ (e) => this.handleChange(e)}/><br/>
-                        <input name="content" value={this.state.content} type="text" placeholder="content" onChange={ (e) => this.handleChange(e)}/> 
+                        <input className="form-input" name="img" value={this.state.img} placeholder="Image URL" onChange={ (e) => this.handleChange(e)}/><br/>
+                        <input className="form-input comment-box" name="content" value={this.state.content} type="text" placeholder="content" onChange={ (e) => this.handleChange(e)}/> 
+                        <br/>
                         <button onClick={() => this.newPost()}>Submit</button>
                  </div>
             </div>         

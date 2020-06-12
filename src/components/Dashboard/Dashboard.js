@@ -6,6 +6,7 @@ import { connect } from "react-redux"
 import { setPosts } from "../../ducks/reducer"
 
 
+
 class Dashboard extends Component {
   constructor(props) {
     super(props)
@@ -73,13 +74,19 @@ handleChange = (e) =>{
     return (
       <div className="dashboard-container">
       
-        <div className="right-container">
+        
           
-          <div className="post-container">
+          <div className="post-container search-container">
+           <div>
             <input className="search-field" placeholder="Search Posts" name="filter" value={this.state.filter} onChange={ (e) => this.handleChange(e)}/> 
             <button onClick={this.getSearch}>Icon</button> 
             <button className="search-reset">Reset</button> 
+            </div>
+
+            <div>
             Include My Posts <input className="search-check" type="checkbox"/>
+            </div>
+
           </div>
 
           <div className="post-container">
@@ -87,7 +94,7 @@ handleChange = (e) =>{
           </div> 
         
         
-        </div>
+        
       
       
             

@@ -6,7 +6,9 @@ background: linear-gradient(0deg, rgba(255,112,166,1) 0%, rgba(255,151,112,1) 67
     height: 100vh;
     color: #fff;
     padding: 40px;
-    float: left;
+    position: absolute;
+    left: 0px;
+    top: 0px;
     box-shadow: 3px 3px 10px grey;
 }
 
